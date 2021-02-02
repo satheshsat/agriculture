@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "./satisum.keystore",
+            "storePassword": "25021995",
+            "alias": "Satisum",
+            "password" : "25021995",
+            "keystoreType": "PKCS12"
+        },
+        "release": {
+            "keystore": "./satisum.keystore",
+            "storePassword": "25021995",
+            "alias": "Satisum",
+            "password" : "25021995",
+            "keystoreType": "PKCS12"
+        }
+    }
+}

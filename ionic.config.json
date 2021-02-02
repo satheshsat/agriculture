@@ -1,0 +1,13 @@
+{
+  "name": "Agriculture",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {
+      "enabled": false
+    }
+  },
+  "hooks":{
+    "build:after": "./attach-source-maps.js"
+  },
+  "type": "angular"
+}

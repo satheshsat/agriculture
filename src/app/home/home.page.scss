@@ -1,0 +1,16 @@
+.custom-skeleton ion-skeleton-text {
+    line-height: 13px;
+  }
+  
+  .custom-skeleton ion-skeleton-text:last-child {
+    margin-bottom: 5px;
+  }
+
+  ion-card{
+    height: 100%;
+  }
+
+  ion-img{
+    height: 28vw;
+    object-fit: cover;
+  }

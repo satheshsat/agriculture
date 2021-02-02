@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar [color]="settings.theme.primary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{settings.translations.crops}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/settings">
+        <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [color]="settings.theme.secondary" [scrollEvents]="true" (ionScrollEnd)="logScrollEnd()">
+
+  <div class="ion-text-center ion-padding" *ngIf="noData">{{settings.translations.noDataFound}}</div>
+
+  <ion-grid class="ion-text-center" *ngIf='!args.crop_id'>
+    <ion-row>
+
+      <ion-col *ngFor="let crop of crops" size='6'>
+        <ion-card style="margin:0px" [routerLink]="'/home/'+crop.id" [color]="settings.theme.primary">
+          <ion-img width="80" height="80" [src]="crop.thumbnail" ></ion-img>
+          <ion-card-header>
+            <ion-card-title style="font-size:20px">{{crop[args.language]}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+    <ion-spinner [color]="settings.theme.primary" *ngIf='spinner' ></ion-spinner>
+  </ion-grid>
+
+  <div *ngIf="args.crop_id" class="ion-text-justify">
+    <div *ngFor="let crop of data">
+      <h3>{{crop.name}}</h3>
+      <p [innerHTML]="crop.content"></p>
+    </div>
+
+    <div *ngIf='spinner'>
+      <div class="ion-padding custom-skeleton">
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        <ion-skeleton-text animated></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      </div>
+      <div class="ion-padding custom-skeleton">
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        <ion-skeleton-text animated></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      </div>
+      <div class="ion-padding custom-skeleton">
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        <ion-skeleton-text animated></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

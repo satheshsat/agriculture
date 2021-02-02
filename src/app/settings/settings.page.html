@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar [color]="settings.theme.primary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{settings.translations.settings}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [color]="settings.theme.secondary" >
+
+  <ion-item [color]="settings.theme.secondary">
+    <ion-label>{{settings.translations.language}}</ion-label>
+    <ion-select [value]="settings.language" (ionChange)="updateLanguage($event)" [okText]="settings.translations.ok" [cancelText]="settings.translations.cancel">
+      <ion-select-option value="en">{{settings.translations.english}}</ion-select-option>
+      <ion-select-option value="ta">{{settings.translations.tamil}}</ion-select-option>
+      <ion-select-option value="te">{{settings.translations.telugu}}</ion-select-option>
+      <ion-select-option value="ml">{{settings.translations.malayalam}}</ion-select-option>
+      <ion-select-option value="hi">{{settings.translations.hindi}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item [color]="settings.theme.secondary">
+    <ion-label>{{settings.translations.darkmode}}</ion-label>
+    <ion-toggle [color]="settings.theme.primary" [checked]="darkmode" (ionChange)="updateTheme($event)"></ion-toggle>
+  </ion-item>
+
+</ion-content>

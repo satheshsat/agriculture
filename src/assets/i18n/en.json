@@ -1,0 +1,18 @@
+{
+    "crops": "Crops",
+    "english": "English",
+    "tamil": "Tamil",
+    "telugu": "Telugu",
+    "malayalam": "Malayalam",
+    "hindi": "Hindi",
+    "language": "Language",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "noDataFound": "No Data found",
+    "back": "Back",
+    "settings": "Settings",
+    "networkDisconnected": "Network Disconnected",
+    "update": "Update!",
+    "updateMessage": "Please update app and continue",
+    "darkmode": "Dark mode"
+}
